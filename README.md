@@ -34,3 +34,24 @@ services:
         container_name: <container-name>
 
 ```
+
+- how to access to host machien from container:
+
+  - add this to `docker-compose.yaml`
+
+    ```shell
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+    ```
+
+    - or run docker by flag
+
+        ```shell
+        docker run --add-host host.docker.internal:host-gateway
+        ```
+
+  - now you can access to host machine from container by
+
+    ```shell
+    ping host.docker.internal
+    ```
