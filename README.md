@@ -52,11 +52,35 @@
     docker rm -vf $(docker ps -aq)
     ```
 
+- remove all docker images:
+
+    ```bash
+    docker rmi -f $(docker images -aq)
+    ```
+
 - remove docker cache and danglings (can be very huge sometimes)
 
     ```shell
     docker system prune
     ```
+
+- store pulled images on your machine in file for transfering
+
+    ```bash
+    docker save -o <save-location>/<file-name>.tar <image-name>
+    ```
+
+- load image from file to machine
+
+    ```bash
+    docker load -i <image-file-path>.tar
+    ```
+
+> in docker volume mounting it is possible that
+> does not work correctly and you lose your data!
+> because default mode in docker volume plugging
+> is `:mrw` that contains `mknod` that cause unauthorized not accessible,
+> so you should specify `:rw` to remove `mknod` mode.
 
 ## Network
 
@@ -132,6 +156,17 @@
 ## docker-compose.yaml
 
 ```shell
+docker compose up
+```
+
+> when you shut down this you just stoped it
+> for removing completely you should run below:
+
+```shell
+docker compose down
+```
+
+```shell
 docker compose up -d
 ```
 
@@ -163,3 +198,12 @@ services:
         container_name: <container-name>
 
 ```
+
+## Registry
+
+- add image to registry:
+
+    ```bash
+    sudo docker tag <image-name> <your-registry-address>/<image-name>
+    sudo docker push <your-registry-address>/<image-name>
+    ```
