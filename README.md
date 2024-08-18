@@ -84,22 +84,30 @@
 
 ## Network
 
-- how to access to host machien from container:
+### Bridge
 
-  - add this to `docker-compose.yaml`
+- while container wants to talk with each other you can
+put them in a bridge network and for connection ip you can simply use
+from the docker container name!
+  - consider that port is original docker container port not the port-mapping
+  (port-mapping is used for network host mode)
+
+### Access to Host machien from Container
+
+- add this to `docker-compose.yaml`
 
     ```shell
     extra_hosts:
         - "host.docker.internal:host-gateway"
     ```
 
-    - or run docker by flag
+  - or run docker by flag
 
-        ```shell
-        docker run --add-host host.docker.internal:host-gateway
-        ```
+    ```shell
+    docker run --add-host host.docker.internal:host-gateway
+    ```
 
-  - now you can access to host machine from container by
+- now you can access to host machine from container by
 
     ```shell
     ping host.docker.internal
