@@ -83,6 +83,14 @@ want to delete the specific volumes.
 
 - default volumes path is **`/var/lib/docker/volumes`**
 
+- when you specify volumes in docker-compose below form saved in default path
+
+    ```docker
+    volumes:
+        <volumename1>:
+        <volumename2>:
+    ```
+
 > in docker volume mounting it is possible that
 > does not work correctly and you lose your data!
 > because default mode in docker volume plugging
