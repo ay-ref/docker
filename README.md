@@ -76,6 +76,13 @@
     docker load -i <image-file-path>.tar
     ```
 
+## Volumes
+
+- always try to give name to your volumes to be easier later that you
+want to delete the specific volumes.
+
+- default volumes path is **`/var/lib/docker/volumes`**
+
 > in docker volume mounting it is possible that
 > does not work correctly and you lose your data!
 > because default mode in docker volume plugging
@@ -186,11 +193,12 @@ docker compose down
 # this is comment
 version: <version>
 
-networks: <networks-define>
+networks:
+    <network-name>:
+        driver: <network-type>
 
 volumes:
     <volume-name>:
-        driver: <volume-type>
 
 services:
     <service-name>:
