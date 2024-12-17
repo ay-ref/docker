@@ -23,7 +23,7 @@
 - run a docker container
 
     ```shell
-    docker run <image-name>
+    docker run --name <container-name> -d <image-name>
     ```
 
     > flag `--rm` is used to remove the container after it stops.
