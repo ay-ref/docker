@@ -240,3 +240,31 @@ services:
     sudo docker tag <image-name> <your-registry-address>/<image-name>
     sudo docker push <your-registry-address>/<image-name>
     ```
+
+## docker swarm
+
+> CONNECTING 2 DOCKER ON 2 SERVER IS NOT THAT MUCH SIMPLE THAT I WAS THINKING! :/
+
+- initialize the first server
+
+```shell
+docker swarm init
+```
+
+- docker swarm join
+
+```shell
+docker swarm join --token <token> <manager-ip>:2377
+```
+
+- deploy a docker compose on an network!
+
+```shell
+docker stack deploy -c docker-compose.yml my-stack
+```
+
+- check the stack status
+
+```shell
+docker stack services my-stack
+```
