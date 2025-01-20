@@ -115,6 +115,9 @@ from the docker container name!
 
 ### Access to Host machien from Container
 
+> **IN BRIDGE MODE YOU CAN ACCESS TO THE DOCKER CONTAINER FROM YOUR HOST,
+> BUT YOU CANNOT ACCESS TO THE HOST FROM DOCKER CONTAINER, SO YOU SHOULD DO THIS**
+
 - add this to `docker-compose.yaml`
 
     ```shell
