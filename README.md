@@ -6,6 +6,26 @@
 
 - docker without sudo [LINK IS HERE](https://www.linkedin.com/pulse/how-run-docker-commands-without-sudo-andrey-byhalenko-gawzf)
 
+### centos
+
+```shell
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+```
+
+```shell
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
+
+```shell
+yum install docker
+```
+
+```shell
+systemctl start docker
+systemctl status docker
+systemctl stop docker
+```
+
 ## CLI
 
 - see the docker images
