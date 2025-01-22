@@ -313,3 +313,16 @@ docker service logs service_name
 ```shell
 docker service ps service_name
 ```
+
+- check swarm status (even worker node)
+
+```shell
+docker info
+```
+
+- docker all services
+
+```shell
+docker service ls
+```
+
