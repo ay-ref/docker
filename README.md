@@ -307,3 +307,9 @@ docker service rm sercie_name
 ```shell
 docker service logs service_name
 ```
+
+- **SEE THE PROCESS OF SERVICE**
+
+```shell
+docker service ps service_name
+```
