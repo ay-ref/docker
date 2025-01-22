@@ -288,3 +288,21 @@ docker stack deploy -c docker-compose.yml my-stack
 ```shell
 docker stack services my-stack
 ```
+
+- remove the stack
+
+```shell
+docker stack rm stack_name
+```
+
+- remove the service
+
+```shell
+docker service rm sercie_name
+```
+
+- see the logs
+
+```shell
+docker service logs service_name
+```
