@@ -263,8 +263,9 @@ services:
 
 ## docker swarm
 
-> CONNECTING 2 DOCKER ON 2 SERVER IS NOT THAT MUCH SIMPLE THAT I WAS THINKING! :/
-> first sync the dates!!!
+> - CONNECTING 2 DOCKER ON 2 SERVER IS NOT THAT MUCH SIMPLE THAT I WAS THINKING! :/
+> - first sync the dates!!!
+> - SOMETIMES YOU SHOULD REMOVE THE WHOLE SWARM TO GET RID OF SOME PROBLEMS!
 
 - initialize the first server
 
