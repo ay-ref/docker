@@ -9,15 +9,13 @@
 ### centos
 
 ```shell
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum remove docker docker-engine docker.io containerd runc
 ```
 
 ```shell
+sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-```
-
-```shell
-yum install docker
+sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
 ```shell
