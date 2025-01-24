@@ -4,7 +4,13 @@
 
 - TODO
 
-- docker without sudo [LINK IS HERE](https://www.linkedin.com/pulse/how-run-docker-commands-without-sudo-andrey-byhalenko-gawzf)
+## docker without sudo
+
+```sh
+sudo groupadd docker 
+sudo gpasswd -a $USER docker 
+newgrp docker 
+```
 
 ### centos
 
