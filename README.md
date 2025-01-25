@@ -271,6 +271,7 @@ services:
 > - first sync the dates!!!
 > - SOMETIMES YOU SHOULD REMOVE THE WHOLE SWARM TO GET RID OF SOME PROBLEMS!
 > - MORE THAN 2 CORE WAS REQUIRED!
+> - BE CAREFUL ABOUT THE `/etc/docker/daemon.json`
 
 - initialize the first server
 
@@ -331,4 +332,3 @@ docker info
 ```shell
 docker service ls
 ```
-
