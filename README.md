@@ -88,6 +88,16 @@ systemctl stop docker
     docker rmi -f $(docker images -aq)
     ```
 
+- transfering files between host and container (VERY PRACTICAL)
+
+```shell
+docker cp container:path/in/container host_path
+```
+
+```shell
+docker cp host_path container:path/in/container
+```
+
 - remove docker cache and danglings (can be very huge sometimes)
 
     ```shell
@@ -272,6 +282,7 @@ services:
 > - SOMETIMES YOU SHOULD REMOVE THE WHOLE SWARM TO GET RID OF SOME PROBLEMS!
 > - MORE THAN 2 CORE WAS REQUIRED!
 > - BE CAREFUL ABOUT THE `/etc/docker/daemon.json`
+> - FLAG `--detach=false` HELPS YOU TO SEE MORE LOGS!
 
 - initialize the first server
 
