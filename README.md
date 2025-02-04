@@ -283,6 +283,7 @@ services:
 > - MORE THAN 2 CORE WAS REQUIRED!
 > - BE CAREFUL ABOUT THE `/etc/docker/daemon.json`
 > - FLAG `--detach=false` HELPS YOU TO SEE MORE LOGS!
+> - i dont know why should i run this manually!: `export $(cat .env)`
 
 - initialize the first server
 
