@@ -173,49 +173,57 @@ from the docker container name!
 
 ## Dockerfile
 
+- try to always have Dockerfile in parent of all files.
+- use from `Dockerfile.purpose` naming convention to be convenient! (ex: `Dockerfile.dev`)
+- you cannot address the parent directory in the Dockerfile:
+
+  ```dockerfile
+  COPY ../file.txt /app/file.txt # this is wrong
+  ```
+
 - comment
 
-    ```shell
+    ```dockerfile
     # this is comment
     ```
 
 - copy file from host to container
 
-    ```shell
+    ```dockerfile
     COPY <host-path>  <container-path>
     ```
 
 - base image
 
-    ```shell
+    ```dockerfile
     FROM <image-name>:<image-version>
     ```
 
 - set working directory of container
 
-    ```shell
+    ```dockerfile
     WORKDIR <path-in-container>
     ```
 
 - container os environment variable
 
-    ```shell
+    ```dockerfile
     ENV <var-name>=<var-value>
     ```
 
 - run shell command
 
-    ```shell
+    ```dockerfile
     RUN <shell-command>
     ```
 
 - run command with running container
 
-    ```shell
+    ```dockerfile
     CMD [ '<command>', '<arg1>', '<arg2>' ]
     ```
 
-    ```shell
+    ```dockerfile
     ENTRYPOINT [ '<command>', '<arg1>', '<arg2>' ]
     ```
 
