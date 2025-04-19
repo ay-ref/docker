@@ -248,6 +248,12 @@ docker compose up -d
 docker compose down
 ```
 
+> **!!!DONT WRITE THE VOLUME AND THE DOCKERFILE CONFIGS (COPY COMMANDS) IN SAME DIRECTORY!!!**
+>
+> this is RIDICULOUS ALTHOUGH :)
+
+- writing `docker-compose`
+
 ```sh
 # this is comment
 version: <version>
