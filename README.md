@@ -139,6 +139,14 @@ want to delete the specific volumes.
 
 ## Network
 
+### Default
+
+- docker in default running usually up to one `bridge` network that has from first
+  in installation.
+
+> after installation docker your system add to a new network adapter (subnet),
+> that you may see your ip in the `hostanme -I` command!
+
 ### Bridge
 
 - while container wants to talk with each other you can
