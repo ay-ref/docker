@@ -137,6 +137,12 @@ want to delete the specific volumes.
 > is `:mrw` that contains `mknod` that cause unauthorized not accessible,
 > so you should specify `:rw` to remove `mknod` mode.
 
+### Dockerfile `COPY` vs Running with `volume`
+
+- you can use and it is recommended to use from `volume`
+  for `TEST & DEVELOPMENT` BUT NOT for `PRODUCTION`. 
+
+
 ## Network
 
 ### Default
