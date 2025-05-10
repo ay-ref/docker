@@ -140,7 +140,12 @@ want to delete the specific volumes.
 ### Dockerfile `COPY` vs Running with `volume`
 
 - you can use and it is recommended to use from `volume`
-  for `TEST & DEVELOPMENT` BUT NOT for `PRODUCTION`. 
+  for `TEST & DEVELOPMENT` BUT NOT for `PRODUCTION`.
+
+### Dockerfile `CMD` vs docker-compose `command:`
+
+- you can have both or just one of them
+- if you have both `command:` overrides the `CMD` command 
 
 
 ## Network
