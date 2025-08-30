@@ -137,7 +137,26 @@ want to delete the specific volumes.
 > is `:mrw` that contains `mknod` that cause unauthorized not accessible,
 > so you should specify `:rw` to remove `mknod` mode.
 
+### Dockerfile `COPY` vs Running with `volume`
+
+- you can use and it is recommended to use from `volume`
+  for `TEST & DEVELOPMENT` BUT NOT for `PRODUCTION`.
+
+### Dockerfile `CMD` vs docker-compose `command:`
+
+- you can have both or just one of them
+- if you have both `command:` overrides the `CMD` command 
+
+
 ## Network
+
+### Default
+
+- docker in default running usually up to one `bridge` network that has from first
+  in installation.
+
+> after installation docker your system add to a new network adapter (subnet),
+> that you may see your ip in the `hostanme -I` command!
 
 ### Bridge
 
@@ -279,6 +298,64 @@ services:
         container_name: <container-name>
 
 ```
+
+- `docker-compose.yml` example
+
+```docker
+# this is comment
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: app-db
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./files:/files
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  webapp:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    container_name: app-web
+    restart: on-failure:3
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: myuser
+      DB_PASS: mypassword
+      DB_NAME: mydb
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    networks:
+      - backend
+      - frontend
+
+volumes:
+  db_data:
+  redis_data:
+
+networks:
+  backend:
+  frontend:
+```
+
 
 ## Registry
 
