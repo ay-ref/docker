@@ -289,6 +289,18 @@ services:
     sudo docker push <your-registry-address>/<image-name>
     ```
 
+- add insecure registries
+
+	```bash
+	docker login
+
+	sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
+	{
+		"insecure-registries": ["192.168.200.158:5000"]
+	}
+	EOF' 
+	```
+
 ## docker swarm
 
 - DONT USE DOCKER SWARM IF YOU CAN USE ANY OTHER APPROACHE!
