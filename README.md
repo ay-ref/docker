@@ -267,6 +267,12 @@ docker compose up -d
 docker compose down
 ```
 
+- find docker compose file location
+
+```sh
+docker inspect yourContainer | grep com.docker.compose
+```
+
 > **!!!DONT WRITE THE VOLUME AND THE DOCKERFILE CONFIGS (COPY COMMANDS) IN SAME DIRECTORY!!!**
 >
 > this is RIDICULOUS ALTHOUGH :)
