@@ -32,6 +32,12 @@ systemctl stop docker
 
 ## CLI
 
+- see docker processes
+
+	```shell
+ 	docker images --format "{{.Repository}}:{{.Tag}}"
+ 	```
+
 - see the docker images
 
     ```shell
