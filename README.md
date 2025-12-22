@@ -380,15 +380,15 @@ networks:
 
 - add insecure registries
 
-	```bash
-	docker login
-	
-	sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
-	{
-		"insecure-registries": ["192.168.200.158:5000"]
-	}
-	EOF'
-	```
+```bash
+docker login
+
+sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
+{
+	"insecure-registries": ["192.168.200.158:5000"]
+}
+EOF'
+```
 
 ## docker swarm
 
