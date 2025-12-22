@@ -381,13 +381,13 @@ networks:
 - add insecure registries
 
 	```bash
-	docker login
+docker login
 
-	sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
-	{
-		"insecure-registries": ["192.168.200.158:5000"]
-	}
-	EOF' 
+sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
+{
+	"insecure-registries": ["192.168.200.158:5000"]
+}
+EOF' 
 	```
 
 ## docker swarm
